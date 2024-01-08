@@ -1,152 +1,120 @@
+"use client"
 import Image from 'next/image'
 import styles from './page.module.css'
+import bootstrap from '../../../bootstrap-5.3.2-dist/bootstrap-5.3.2-dist/css/bootstrap.min.css'
 
-export default function Home() {
+import { useEffect } from 'react';
+
+const CardComponent = () => {
+  const cardsContainer = document.querySelector(".cards");
+  const cardsContainerInner = document.querySelector(".cardsInner");
+  const cards = Array.from(document.querySelectorAll(".card"));
+  const overlay = document.querySelector(".overlay");
+
+  const applyOverlayMask = (e) => {
+    const overlayEl = e.currentTarget;
+    const x = e.pageX - cardsContainer.offsetLeft;
+    const y = e.pageY - cardsContainer.offsetTop;
+
+    overlayEl.style = `--opacity: 1; --x: ${x}px; --y:${y}px;`;
+  };
+
+  const createOverlayCta = (overlayCard, ctaEl) => {
+    const overlayCta = document.createElement("div");
+    overlayCta.classList.add("cta");
+    overlayCta.textContent = ctaEl.textContent;
+    overlayCta.setAttribute("aria-hidden", true);
+    overlayCard.append(overlayCta);
+  };
+
+  const observer = new ResizeObserver((entries) => {
+    entries.forEach((entry) => {
+      const cardIndex = cards.indexOf(entry.target);
+      let width = entry.borderBoxSize[0].inlineSize;
+      let height = entry.borderBoxSize[0].blockSize;
+
+      if (cardIndex >= 0) {
+        overlay.children[cardIndex].style.width = `${width}px`;
+        overlay.children[cardIndex].style.height = `${height}px`;
+      }
+    });
+  });
+
+  const initOverlayCard = (cardEl) => {
+    const overlayCard = document.createElement("div");
+    overlayCard.classList.add("card");
+    createOverlayCta(overlayCard, cardEl.lastElementChild);
+    overlay.append(overlayCard);
+    observer.observe(cardEl);
+  };
+
+  useEffect(() => {
+    cards.forEach(initOverlayCard);
+    document.body.addEventListener("pointermove", applyOverlayMask);
+
+    // Cleanup function
+    return () => {
+      document.body.removeEventListener("pointermove", applyOverlayMask);
+      observer.disconnect();
+    };
+  }, []);
+
+
   return (
-    <main className={styles.main}>
-      
+    <main>
+
       <section className={styles.home}>
-      <div className={styles.description}>
-        <h1 className={styles.title}>
-          <span className={styles.gradientText}>Grow Professionally</span> with the Best
-        </h1>
-        <p className={styles.paragraph}>
-          In a world filled with opportunities, having a mentor can make all the
-          difference. Explore why people turn to this invaluable resource to
-          unlock their potential.
-        </p>
-        
+        <img className={styles.Image} src="https://img.freepik.com/free-vector/twitch-background-casino-gambling_23-2150257474.jpg?w=1060&t=st=1704615918~exp=1704616518~hmac=b8bddfaa3b21fc457d1cd79895d00c50ead54a9c69b4384c5f87b0aaaaf94ef0" alt="" height={100} width={500} />
+
+      </section>
+
+      <section className={styles.selectPlan}>
+        <h1>Pricing</h1>
+      <div className={[styles.mainCards, styles.cards].join('')}>
+    <div className={styles.cardsInner}>
+      <div className={`${styles.cardsCard} ${styles.card}`}>
+        <h2 className={styles.cardHeading}>Basic</h2>
+        <p className={styles.cardPrice}>$9.99</p>
+        <ul role="list" className={[styles.cardBullets, styles.flow].join('')}>
+          <li>Access to standard workouts and nutrition plans</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#basic" className={[styles.cardCta , styles.cta].join('')}>Get Started</a>
       </div>
 
-      <div className={styles.usersColorContainer}>
-        <span className={styles.item} style={{ '--i': 1 }}></span>
-        <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/10088b1a-c0aa-42a9-8dff-1a692eb597d6" alt="" />
-        
-        <span className={styles.item} style={{ '--i': 3 }}></span>
-        
-
-        
-        <span className={styles.item} style={{ '--i': 11 }}></span>
-        
-        <span className={styles.temm} style={{ '--i': 5 }}></span>
-
-        <span className={styles.temm} style={{ '--i': 9 }}></span>
-        
-        <span className={styles.temm} style={{ '--i': 7 }}></span>
-        
+      <div className={[styles.cardsCard, styles.card].join('')}>
+        <h2 className={styles.cardHeading}>Pro</h2>
+        <p className={styles.cardPrice}>$19.99</p>
+        <ul role="list" className={[styles.cardBullets, styles.flow].join('')}>
+          <li>Access to advanced workouts and nutrition plans</li>
+          <li>Priority Email support</li>
+          <li>Exclusive access to live Q&A sessions</li>
+        </ul>
+        <a href="#pro" className={[styles.cardCta, styles.cta].join('')}>Upgrade to Pro</a>
       </div>
-    </section>
 
-    <section className={styles.cardContainer} id="card-container">
-      <div className={styles.slider}>
-        <div className={styles.card} dataTilt>
-          <div className={styles.content}>
-            <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/10088b1a-c0aa-42a9-8dff-1a692eb597d6" alt="" />
-            <h1>Personalized Guidance</h1>
-            <p>
-              Whether you are pursuing a career change, entrepreneurship, or
-              personal development, a mentor offers substantial advice and
-              support to navigate your unique path.
-            </p>
-            <button className={[styles.btn, styles.btnGrad].join(' ')}>
-              <span>Learn More</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.card} dataTilt>
-          <div className={styles.content}>
-            <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/69fb8584-66a0-4ecd-bae5-dd00015a1ad5" alt="" />
-            <h1>Accelerated Growth</h1>
-            <p>
-              With a mentor, you can fast-track your journey to success. Benefit
-              from their experience and tap into their knowledge, helping you
-              avoid common pitfalls.
-            </p>
-            <button className={[styles.btn, styles.btnGrad].join(' ')}>
-              <span>Learn More</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.card} data-tilt>
-          <div className={styles.content}>
-            
-            <h1>Inspiration & Motivation</h1>
-            <p>
-              A mentor isn't just an advisor; they are a source of inspiration
-              and motivation. They can help you to set and achieve ambitious
-              goals and gain your self-confident.
-            </p>
-            <button className={[styles.btn, styles.btnGrad].join(' ')}>
-              <span>Learn More</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.card} data-tilt>
-          <div className={styles.content}>
-            
-            <h1>Networking & Connections</h1>
-            <p>
-              Your mentor can open doors to valuable connections and
-              opportunities. They can introduce you to their network and help
-              you build meaningful relationships.
-            </p>
-            <button className={[styles.btn, styles.btnGrad].join(' ')}>
-              <span>Learn More</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.card} data-tilt>
-          <div className={styles.content}>
-            
-            <h1>Expert Insights</h1>
-            <p>
-              Gain access to industry insights and expert knowledge that you
-              won't find in textbooks. Your mentor can provide practical wisdom
-              that textbooks can't teach.
-            </p>
-            <button className={[styles.btn, styles.btnGrad].join(' ')}>
-              <span>Learn More</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.card} data-tilt>
-          <div className={styles.content}>
-            
-            <h1>Confidence & Self-Esteem</h1>
-            <p>
-              A mentor is like a supportive coach, boosting your confidence and
-              self-esteem. Their encouragement can help you believe in your
-              potential and take on challenges with vigor.
-            </p>
-            <button className={[styles.btn, styles.btnGrad].join(' ')}>
-              <span>Learn More</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </button>
-          </div>
-        </div>
+      <div className={[styles.cardsCard , styles.card].join('')}>
+        <h2 className={styles.cardHeading}>Ultimate</h2>
+        <p className={styles.cardPrice}>$29.99</p>
+        <ul role="list" className={[styles.cardBullets, styles.flow].join('')}>
+          <li>Access to all premium workouts and nutrition plans</li>
+          <li>24/7 Priority support</li>
+          <li>1-on-1 virtual coaching session every month</li>
+          <li>Exclusive content and early access to new features</li>
+        </ul>
+        <a href="#ultimate" className={[styles.cardCta, styles.cta].join('')}>Go Ultimate</a>
       </div>
-      <ul className={styles.control} id="custom-control">
-        <li className={styles.prev}>
-          <ion-icon className={styles.arrow} name="caret-back-outline"></ion-icon>
-        </li>
-        <li className={styles.next}>
-          <ion-icon className= {styles.arrow} name="caret-forward-outline"></ion-icon>
-        </li>
-      </ul>
-    </section>
-      
+    </div>
+    
+    <div className={[styles.overlay ,styles.cardsInner].join('')}></div>
+  </div>
+      </section>
 
-     
+
+
     </main>
   )
 }
+
+
+export default CardComponent
