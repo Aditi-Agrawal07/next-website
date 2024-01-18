@@ -64,6 +64,7 @@
     max-width: calc(100vw - 2rem);
     position: relative;
   }
+ 
   
   /* Glow specific styles */
   .glow{
@@ -362,21 +363,26 @@
 .btn{
   background-color:rgb(20, 20, 143);
   font-weight: bolder;
-  padding-left: 15%;
-  padding-right: 15%;
+padding: 10px 50px;
+  color: #fff;
 
 }
 .btn2{
   background-color: #fc5185;
   font-weight: bolder;
-  padding-left: 15%;
-  padding-right: 15%;
+ padding: 10px 50px;
   border: none;
+  color:#fff
 
 }
 .btn:hover{
   background-color:rgb(9, 9, 59);
   font-weight: bolder;
+}
+.btn2:hover{
+  background-color: #ed4d7d ;
+  color: #ffff;
+  
 }
 .card{
   transition: transform 0.3s ease-in-out;
@@ -390,9 +396,11 @@
 }
 .listText{
   font-weight: bolder;
+  color: #000
+  ;
 }
 .listItem{
-    color: rgb(13, 13, 102);
+    /* color: rgb(13, 13, 102); */
     margin-top: 3%;
     font-size: 13px;
     
@@ -630,7 +638,15 @@ padding: 30px  20px;
 font-size: 14px;
 border-bottom: 1px solid #fff;
 }
-.listItem{
+.PriceSectionHeading{
+  color: #162561;
+  font-size: 40px;
+  font-weight: bolder;
+  justify-content: center;
+  display: flex;
+  padding: 30px
+}
+/* .listItem{
   border-top: 1px solid #6f7aa6;
   display: block;
   font-size: 16px;
@@ -639,7 +655,7 @@ border-bottom: 1px solid #fff;
   transition: all 400ms linear 0s;
   text-decoration: none;
   line-height: 50px;
-}
+} */
 .cost {
   position: absolute;
   top: 8px;
@@ -670,12 +686,12 @@ border-bottom: 1px solid #fff;
   z-index: 2;
   line-height: 60px;
 }
-.btn{
+/* .btn{
   border: 1px solid white;
   padding: 10px;
   border-radius: 0.5px;
   transition: all 400ms linear 0s;
-}
+} */
 .btn:hover{
   background-color: #162561;
   color: #fff;

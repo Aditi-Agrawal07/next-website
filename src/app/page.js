@@ -179,13 +179,14 @@ return (
 const Prices = () => {
 return (
   <div className={`container mt-5`}>
+    <h1 className={styles.PriceSectionHeading}>Select your plan</h1>
         <div className="row">
            {/* First Card */}
             <div class={`col col-ms-4 col-lg-4`}>
                 <div class={`card ${styles.card}`} >
                 
-                    <div className="card-body">
-                        <h5  style={{ color: "rgb(20, 20, 143)", fontWeight: "bolder", paddingLeft: 30 }}> Premium</h5>
+                    <div className="card-body" >
+                        <h5  style={{ color: "rgb(20, 20, 143)", fontWeight: "bolder", paddingLeft: 30 , justifyContent:'center', display: 'flex'}}> Premium</h5>
                         <p>Enjoy optimised performance & guaranteed resources</p>
                         <p  className= {`mt-5 ms-5`}> ₹599.00 <span className={styles.saveDiv}> Save 64%</span></p>
                        <h1 className={`${styles.price} ms-5`}>139.00 <span>/mo</span></h1>
@@ -195,18 +196,18 @@ return (
                         <p className={`ms-5 mt-3`}> ₹240.00/mo when you renew</p>
                         <hr/>
 
-            <h6 className="styles.firstFea">Top Features</h6>
-            <ul className='styles.list'>
-                <li className='styles.listItem'> <span className="styles.listText">Standard</span> Perform</li>
-                <li className='styles.listItem'><span className="styles.listText">100</span> website</li>
-                <li className='styles.listItem'><span className="styles.listText">100 GB</span> SSD Storage</li>
-                <li className='styles.listItem'> <span className="styles.listText">Weekly</span> Backups</li>
-                <li className='styles.listItem'><span className="styles.listText">Ulimited</span>Free SSL</li>
-                <li className='styles.listItem'> <span className="styles.listText">Unlimited</span> Bandwidth</li>
-                <li className='styles.listItem'> <span className="styles.listText">Free</span> Email</li>
-                <li className='styles.listItem'><span className="styles.listText">Free</span> Domain(799.00 value)</li>
-                <li className='styles.listItem'> <span className="styles.listText">Free</span> CDN</li>
-                <li className='styles.listItem'> <span className="styles.listText">Dedicated</span> IP Adress</li>
+            <h6 className={styles.firstFea}>Top Features</h6>
+            <ul className={styles.list}>
+                <li className={styles.listItem}> <span className={styles.listText}>Standard</span> Perform</li>
+                <li className={styles.listItem}><span className={styles.listText}>100</span> website</li>
+                <li className={styles.listItem}><span className={styles.listText}>100 GB</span> SSD Storage</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Weekly</span> Backups</li>
+                <li className={styles.listItem}><span className={styles.listText}>Ulimited</span>Free SSL</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Unlimited</span> Bandwidth</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Free</span> Email</li>
+                <li className={styles.listItem}><span className={styles.listText}>Free</span> Domain(799.00 value)</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Free</span> CDN</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Dedicated</span> IP Adress</li>
             </ul> 
                     </div>
                   </div>
@@ -218,28 +219,28 @@ return (
                 
                     <div className="card-body">
                         <h5 style={{ color: "#fc5185",
-                        fontWeight: "bolder", paddingLeft: 30}}> Business</h5>
+                        fontWeight: "bolder", paddingLeft: 30, justifyContent: 'center', display: 'flex'}}> Business</h5>
                         <p>Level-up with more power and enhanced features  </p>
-                        <p  className={`mt-5 ms-5`}> ₹699.00 <span class={styles.saveDiv2} > Save 77%</span></p>
+                        <p  className={`mt-5 ms-5`}> ₹699.00 <span className={styles.saveDiv2} > Save 77%</span></p>
                        <h1 className={`${styles.price} ms-5`}>249.00 <span>/mo</span></h1>
                         <p className={styles.monthDiv2}> +3 months Free</p>
-                        <div className={`btn1  ${styles.btn2}  ms-5`}> Add to Cart</div>
+                        <div className={`btn  ${styles.btn2}  ms-5`}> Add to Cart</div>
     
                         <p className={`ms-5 mt-3`}> ₹499.00/mo when you renew</p>
                         <hr/>
 
             <h6 className={styles.firstFea}>Top Features</h6>
-            <ul className='styles.list'>
-                <li className='styles.listItem'> <span className="styles.listText">Increased </span> Performance (Up to 5x)</li>
-                <li className="styles.listItem"> <span className="styles.listText">100</span> website</li>
-                <li className="styles.listItem"><span className="styles.listText">200 GB</span> NVMe Storage</li>
-                <li className="styles.listItem"> <span className="styles.listText">Daily</span> Backups (₹1,380.00 value) </li>
-                <li className="styles.listItem"><span className="styles.listText">Ulimited</span>Free SSL</li>
-                <li className="styles.listItem"> <span className="styles.listText">Unlimited</span> Bandwidth</li>
-                <li className="styles.listItem"> <span className="styles.listText">Free</span> Email</li>
-                <li className="styles.listItem"><span className="styles.listText">Free</span> Domain(799.00 value)</li>
-                <li className="styles.listItem"> <span className="styles.listText">Free</span> CDN</li>
-                <li className="styles.listItem"> <span className="styles.listText">Dedicated</span> IP Adress</li>
+            <ul className={styles.list}>
+                <li className={styles.listItem}> <span className={styles.listText}>Increased </span> Performance (Up to 5x)</li>
+                <li className={styles.listItem}> <span className={styles.listText}>100</span> website</li>
+                <li className={styles.listItem}><span className={styles.listText}>200 GB</span> NVMe Storage</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Daily</span> Backups (₹1,380.00 value) </li>
+                <li className={styles.listItem}><span className={styles.listText}>Ulimited</span>Free SSL</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Unlimited</span> Bandwidth</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Free</span> Email</li>
+                <li className={styles.listItem}><span className={styles.listText}>Free</span> Domain(799.00 value)</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Free</span> CDN</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Dedicated</span> IP Adress</li>
             </ul> 
                     </div>
                   </div>
@@ -260,17 +261,17 @@ return (
                         <hr/>
 
             <h6 className={styles.firstFea}>Top Features</h6>
-            <ul className='styles.list'>
-                <li className='styles.listItem'> <span className="styles.listText">Standard</span> Perform</li>
-                <li className='styles.listItem'> <span className="styles.listText">100</span> website</li>
-                <li className='styles.listItem'><span className="styles.listText">100 GB</span> SSD Storage</li>
-                <li className='styles.listItem'> <span className="styles.listText">Weekly</span> Backups</li>
-                <li className='styles.listItem'><span className="styles.listText">Ulimited</span>Free SSL</li>
-                <li className='styles.listItem'> <span className="styles.listText">Unlimited</span> Bandwidth</li>
-                <li className='styles.listItem'> <span className="styles.listText">Free</span> Email</li>
-                <li className='styles.listItem'><span className="styles.listText">Free</span> Domain(799.00 value)</li>
-                <li className='styles.listItem'> <span className="styles.listText">Free</span> CDN</li>
-                <li className='styles.listItem'> <span className="styles.listText">Dedicated</span> IP Adress</li>
+            <ul className={styles.list}>
+                <li className={styles.listItem}> <span className={styles.listText}>Standard</span> Perform</li>
+                <li className={styles.listItem}> <span className={styles.listText}>100</span> website</li>
+                <li className={styles.listItem}><span className={styles.listText}>100 GB</span> SSD Storage</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Weekly</span> Backups</li>
+                <li className={styles.listItem}><span className={styles.listText}>Ulimited</span>Free SSL</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Unlimited</span> Bandwidth</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Free</span> Email</li>
+                <li className={styles.listItem}><span className={styles.listText}>Free</span> Domain(799.00 value)</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Free</span> CDN</li>
+                <li className={styles.listItem}> <span className={styles.listText}>Dedicated</span> IP Adress</li>
             </ul> 
                     </div>
                   </div>
@@ -281,48 +282,7 @@ return (
 )
 }
 
-{/* const Prices = ()=>{
 
-return (
-  <div className = "container">
-  <div className= "row">
-    <div className='col-4'>
-      <div className='card'>
-        <div className='card-body'>
-       <h1> Premium </h1>
-       <p>Everything you need to create your website</p>
-       <div><span>599</span><span>SAVE 77%</span></div>
-       <div><span></span><span>139.00</span><span>/mo</span></div>
-       <p>+3 months FREE</p>
-       <div className={`${btn} ${btn-primary}`}>Add to cart</div>
-        </div>
-      </div>
-    </div>
-    <div className='col-4'>
-    <div className='card'>
-        <div className='card-body'>
-        Everything you need to create your website Everything you need to create your website Everything you need to create your website
-        Everything you need to create your website Everything you need to create your website Everything you need to create your website
-        </div>
-      </div>
-    </div>
-    <div className='col-4'>
-    <div className='card'>
-        <div className='card-body'>
-        Everything you need to create your website Everything you need to create your website Everything you need to create your website
-        Everything you need to create your website Everything you need to create your website Everything you need to create your website
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-</div>
-)
-
-
-
-} */}
 
 
 
@@ -541,57 +501,8 @@ const Screenshots = () => {
 
 
 
-const usePointerGlow = () => {
-  const [status, setStatus] = React.useState(null);
 
-  useLayoutEffect(() => {
-    const syncPointer = ({ x: pointerX, y: pointerY }) => {
-      const x = pointerX.toFixed(2)
-      const y = pointerY.toFixed(2)
-      const xp = (pointerX / window.innerWidth).toFixed(2)
-      const yp = (pointerY / window.innerHeight).toFixed(2)
-      document.documentElement.style.setProperty('--x', x)
-      document.documentElement.style.setProperty('--xp', xp)
-      document.documentElement.style.setProperty('--y', y)
-      document.documentElement.style.setProperty('--yp', yp)
-      setStatus({ x, y, xp, yp })
-    }
-
-    document.body.addEventListener('pointermove', syncPointer);
-
-    return () => {
-      document.body.removeEventListener('pointermove', syncPointer);
-    };
-  }, []);
-
-  return [status];
-}
 // YourComponent.js
-const Article = ({ isFirst }) => {
-  const [status] = usePointerGlow();
-
-  return (
-    <article className={`${styles.article} ${isFirst ? styles.firstArticle : ''}  ${styles.glow} ${styles.wrapper}`} data-glow>
-
-      <div className={styles.pricingItem}>
-        <h3 className={styles.pricingItemHeading}>Standard</h3>
-        <h2 className={styles.pricingItemHeadingSecond}>$9.99</h2>
-        <ul className={styles.list}>
-          <li className={styles.item1} ><a href="#" className={styles.listItem}>Fully Responsive</a></li>
-          <li className={styles.item1}><a href="#" className={styles.listItem}>Dedicated Support</a></li>
-          <li className={styles.item1}><a href="#" className={styles.listItem}>Clean and Modern Design</a></li>
-          <li className={styles.item1}><a href="#" className={styles.listItem}>Simple and Professional</a></li>
-          <li className={styles.item1}><a href="#" className={styles.listItem}>24/7 Support</a></li>
-        </ul>
-        <span className={styles.btn}>
-          <a className={styles.purchaseBtn} href="#">Purchase Now</a>
-        </span>
-      </div>
-    </article>
-  );
-};
-
-
 
 const card = () => {
 
@@ -607,14 +518,7 @@ const card = () => {
       <Prices/>
       <Service/>
       <Screenshots />
-      <section className={styles.card}>
-        <h1 className={styles.cardHeading}>Pricing</h1>
-        <div className={styles.main}>
-          <Article isFirst />
-          <Article />
-          <Article />
-        </div>
-      </section>
+   
 
 
 
