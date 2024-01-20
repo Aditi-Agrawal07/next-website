@@ -6,17 +6,25 @@ import 'jquery.flipster/dist/jquery.flipster.min.css'; // Import Flipster CSS
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
+// import {swiperCss} from 'swiper/modules/';
 import 'swiper/css/pagination'
 import 'swiper/scss/effect-cube'
 import 'swiper/css/autoplay'
+
 import SwiperCore from 'swiper/core';
+
+
 import { Autoplay, EffectCube, Pagination } from 'swiper/modules'
+// import 'swiper/swiper-bundle';
 import styles from './page.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
 import screenImage from '../assets/Screen_image.png'
 import ServiceImage from '../assets/Servies_01.png'
+import phoneFrame from '../assets/phone-fream.png'
+import SlideImage1 from '../assets/s-4.png'
+import SlideImage2 from '../assets/s-5.png'
+import SlideImage3 from '../assets/s-6.png'
 
 
 import 'swiper/css';
@@ -281,6 +289,86 @@ return (
     </div>
 )
 }
+const Contact = () =>{
+  return(
+    <section id="contact">
+    <div className={`${styles.contact} ptb_100`}>
+        <div className="container">
+            <div className={`mb-5 text-center`}>
+                <h5 className={styles.heading5}>Let s Start a Conversation!</h5>
+                <h2 className="fw-bold">Contact Us</h2>
+            </div>
+        </div>
+        <div className="mobile_px_20">
+            <div className="container">
+                <div className="row">
+                <div className={`col-lg-5 col-md-5`}>
+                    <h4 className="fw-bold">Contact Info</h4>
+                    <ul className={`${styles.info} list-unstyled`}>
+                    <li className="d-flex align-items-center"> 
+                        <span className="pe-3 ti-location-pin fs-5"></span>
+                        <p><a href="">Lorem ipsum dolor sit amet, consectetur.</a></p>
+                    </li>
+                    <li className="d-flex align-items-center">
+                        <span className="pe-3 ti-mobile fs-5"></span>
+                        <p><a href="">+91 999-999-9999</a></p>
+                    </li>
+                    <li className="d-flex align-items-center">
+                        <span className="pe-3 ti-envelope fs-5"></span>
+                        <p><a href="">Info@lifecoach.in</a></p>
+                    </li> 
+                    </ul>
+                </div>
+                <div className="col-lg-7 col-md-7 pt-lg-0 pt-md-0 pt-4">
+                    <form>
+                    <div className="row">
+                        <div className="col-md-6">
+                        <div className={styles.formGroup}>
+                            <input type="text" className={styles.formControl} name="name" id="name" placeholder="Your name"/>
+                        </div>
+                        </div>
+                        <div className="col-md-6">
+                        <div className={styles.formGroup}>
+                            <input type="email" className={styles.formControl} name="email" id="email" placeholder="Email address"/>
+                        </div>
+                        </div>
+                        <div className="col-md-12">
+                        <div className={styles.formGroup}>
+                            <input className={styles.textarea} name="message" cols="30" rows="4" id="message" placeholder="Enter your message"/>
+                        </div>
+                        </div>
+                        <div className="col-md-12"> 
+                        <button className={`btn ${styles.sendMessagebtn}`}><span className="ti-rocket pe-2 fs-5"></span> Send Message</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  )
+}
+
+const Footer = () => {
+  return(
+    <footer> 
+    <div className={`p-3 ${styles.copyright}`}>
+    <div className="container">
+        <div className="row align-items-center">
+        <div className="col-12 col-lg-6 p-3 text-center text-lg-start mob-pb-0">
+            <p className="my-0">Copyright © 2021 <a href="#">ONESHOT</a> All Rights Reserved</p>
+        </div>
+        <div className="col-12 col-lg-6 p-3 text-center text-lg-end mob-pt-0">
+            <p>Designed by <a href="#" target=" _blank">CODE4EDUCATION</a>.</p>
+        </div>
+        </div>
+    </div>
+    </div> 
+</footer>
+  )
+}
 
 
 
@@ -290,214 +378,97 @@ const Screenshots = () => {
 
 
   return (
-    <section className={styles.screenshotArea} id="screenshot">
-      <div className={styles.main_title}>
-        <h2>Screenshots</h2>
-      </div>
-      <div className="flipster flipster--transform flipster--coverflow flipster--click flipster--active" style={{ display: 'block' }} tabIndex="0">
-        <ul className="flipster__container" style={{ height: '685.75px', transform: 'translateX(-1126.5px)' }}>
-          <li className="flipster__item  flipster__item--past flipster__item--past-13" style={{ zIndex: 0, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-12" style={{ zIndex: 1, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-11" style={{ zIndex: 2, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-10" style={{ zIndex: 3, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-9" style={{ zIndex: 4, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-8" style={{ zIndex: 5, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-7" style={{ zIndex: 6, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-6" style={{ zIndex: 7, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-5" style={{ zIndex: 8, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-4" style={{ zIndex: 9, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-3" style={{ zIndex: 10, marginRight: ' -252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-2" style={{ zIndex: 11, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--past flipster__item--past-1" style={{ zIndex: 12, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--current" style={{ zIndex: 19, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} /></div></li>
-          <li className="flipster__item  flipster__item--future flipster__item--future-1" style={{ zIndex: 4, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--future flipster__item--future-2" style={{ zIndex: 3, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--future flipster__item--future-3" style={{ zIndex: 2, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-          <li className="flipster__item  flipster__item--future flipster__item--future-4" style={{ zIndex: 1, marginRight: '-252px' }}><div className="flipster__item__content">
-            <Image src={screenImage} alt="Scrennshots" /></div></li>
-        </ul>
-      </div>
-    </section>
+ <section>
+  <div className='container'>
+    <div className='row justify-content-center'>
+  <div className='col-lg-8'>
+    <div className= {`${styles.title} text-center b-5`}>
+      <h6 className='mb-0 fw-fold text-primary'>App Screen</h6>
+      <h2 className={styles.f40}>Show our App screenshots</h2>
+      <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos <br/>
+                            inventore omnis aliquid rerum alias molestias.</p>
+    </div>
+  </div>
+    </div>
+    <div className='row my-5'>
+<div className='col-lg-12'>
+<Swiper
+  spaceBetween={50}
+  slidesPerView={5}
+  loop={true}
+  autoplay={{
+    delay: 2600,
+    pauseOnMouseEnter: true,
+  }}
+  pagination={{clickable: true}}
+  
+  breakpoints={{
+    0: {
+      slidesPerView: 1,
+    },
+    520: {
+      slidesPerView: 2,
+    },
+    950: {
+      slidesPerView: 3,
+    },
+    1020: {
+      slidesPerView: 5
+    }
+  }}
+  className={`${styles.swiperContainer} swiper-container-horizontal`}
+>
+
+
+   
+     
+          <SwiperSlide className={styles.borderRadius} data-swiper-slide-index="3">
+            <Image src={SlideImage1} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius}  data-swiper-slide-index="4">
+            <Image src={SlideImage2} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius} data-swiper-slide-index="5">
+            <Image src={SlideImage3} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius} data-swiper-slide-index="0">
+            <Image src={SlideImage1} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius}  data-swiper-slide-index="1">
+            <Image src={SlideImage2} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius}  data-swiper-slide-index="2">
+            <Image src={SlideImage3} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius}  data-swiper-slide-index="3">
+            <Image src={SlideImage1} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius}  data-swiper-slide-index="4">
+            <Image src={SlideImage2} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius}  data-swiper-slide-index="5">
+            <Image src={SlideImage3} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius}  data-swiper-slide-index="0">
+            <Image src={SlideImage1} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius}  data-swiper-slide-index="1">
+            <Image src={SlideImage2} className="img-fluid"/>
+          </SwiperSlide>
+          <SwiperSlide className={styles.borderRadius}  data-swiper-slide-index="2">
+            <Image src={SlideImage3} className="img-fluid"/>
+          </SwiperSlide>
+          
+  </Swiper>
+
+</div>
+    </div>
+  </div>
+ </section>
   )
 }
 
-// const Videos = () =>{
-//   return(
-//     <section className={styles.ourBenefitsArea}>
-// <div className={styles.ourBenefitsInner}>
-// <div className={styles.benefitsLeft} >
-// <div className={styles.benefitsContent}>
-// <div className={styles.contentTitle}>
-// <h2 className={styles.videoHeading1}>Why is the best</h2>
-// </div>
-// <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis no trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-// <ul>
-// <li><a href="#">
-//  Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
-// <li><a href="#">In our work we try to use only the most modern</a></li>
-// <li><a href="#">We want the template you downloaded look unique</a></li>
-// <li><a href="#">The given template is armed with the number of settings</a></li>
-// <li><a href="#">nnovative solutions and simple mathematically calculated</a></li>
-// <li><a href="#">Emotions that causes your project in visitor</a></li>
-// <li><a href="#">The meeting of developers of cross-platform apps</a></li>
-// </ul>
-// </div>
-// </div>
-// <div className={styles.benefitsRight}>
-// <div className={styles.video_row}>
-// <iframe id="video" src="https://www.youtube.com/embed/bgTdTBpQyi8?enablejsapi=1&amp;html5=1&amp;rel=0&amp;fs=0&amp;loop=1&amp;showinfo=0&amp;disablekb=1&amp;controls=0&amp;color=white&amp;playlist=bgTdTBpQyi8" title="YouTube video player" style={{ height: 645, width: 960 }}></iframe>
-// <div className={styles.overlay} id="video_overlay">
-// <div className={styles.overlayBg}></div>
-// <div className={styles.playPause}>
-// <i className={styles.tiControlPlay} ariaHidden="true" id="play_btn"></i>
-// <i className={styles.tiControlPause} ariaHidden="true" id="pause_btn"></i>
-// <div className={styles.videoContent}>
-// <h4>Play the Video</h4>
-// </div>
-// </div>
-// </div>
-// </div>
-// </div>
-// </div>
-// </section>
-//   )
-// }
 
-// const Footer = () =>{
-//   return(
-//     <footer className={styles.footerSection}>
-//         <div className={styles.container}>
-//             <div class="footer-cta pt-5 pb-5">
-//                 <div class="row">
-//                     <div class="col-xl-4 col-md-4 mb-30">
-//                         <div class="single-cta">
-//                             <i class="fas fa-map-marker-alt"></i>
-//                             <div class="cta-text">
-//                                 <h4>Find us</h4>
-//                                 <span>1010 Avenue, sw 54321, chandigarh</span>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <div class="col-xl-4 col-md-4 mb-30">
-//                         <div class="single-cta">
-//                             <i class="fas fa-phone"></i>
-//                             <div class="cta-text">
-//                                 <h4>Call us</h4>
-//                                 <span>9876543210 0</span>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <div class="col-xl-4 col-md-4 mb-30">
-//                         <div class="single-cta">
-//                             <i class="far fa-envelope-open"></i>
-//                             <div class="cta-text">
-//                                 <h4>Mail us</h4>
-//                                 <span>mail@info.com</span>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div class="footer-content pt-5 pb-5">
-//                 <div class="row">
-//                     <div class="col-xl-4 col-lg-4 mb-50">
-//                         <div class="footer-widget">
-//                             <div class="footer-logo">
-//                                 <a href="index.html">
-//                                   <img src="https://i.ibb.co/QDy827D/ak-logo.png" class="img-fluid" alt="logo" /></a>
-//                             </div>
-//                             <div class="footer-text">
-//                                 <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
-//                                 elit,Lorem ipsum dolor sit amet.</p>
-//                             </div>
-//                             <div class="footer-social-icon">
-//                                 <span>Follow us</span>
-//                                 <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-//                                 <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-//                                 <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-//                         <div class="footer-widget">
-//                             <div class="footer-widget-heading">
-//                                 <h3>Useful Links</h3>
-//                             </div>
-//                             <ul>
-//                                 <li><a href="#">Home</a></li>
-//                                 <li><a href="#">about</a></li>
-//                                 <li><a href="#">services</a></li>
-//                                 <li><a href="#">portfolio</a></li>
-//                                 <li><a href="#">Contact</a></li>
-//                                 <li><a href="#">About us</a></li>
-//                                 <li><a href="#">Our Services</a></li>
-//                                 <li><a href="#">Expert Team</a></li>
-//                                 <li><a href="#">Contact us</a></li>
-//                                 <li><a href="#">Latest News</a></li>
-//                             </ul>
-//                         </div>
-//                     </div>
-//                     <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-//                         <div class="footer-widget">
-//                             <div class="footer-widget-heading">
-//                                 <h3>Subscribe</h3>
-//                             </div>
-//                             <div class="footer-text mb-25">
-//                                 <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
-//                             </div>
-//                             <div class="subscribe-form">
-//                                 <form action="#">
-//                                     <input type="text" placeholder="Email Address" />
-//                                     <button><i class="fab fa-telegram-plane"></i></button>
-//                                 </form>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//         <div class="copyright-area">
-//             <div class="container">
-//                 <div class="row">
-//                     <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-//                         <div class="copyright-text">
-//                             <p>Copyright &copy; 2018, All Right Reserved <a href="https://codepen.io/anupkumar92/">Anup</a></p>
-//                         </div>
-//                     </div>
-//                     <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-//                         <div class="footer-menu">
-//                             <ul>
-//                                 <li><a href="#">Home</a></li>
-//                                 <li><a href="#">Terms</a></li>
-//                                 <li><a href="#">Privacy</a></li>
-//                                 <li><a href="#">Policy</a></li>
-//                                 <li><a href="#">Contact</a></li>
-//                             </ul>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     </footer>
-//   );
-// }
 
 
 
@@ -518,10 +489,10 @@ const card = () => {
       <Prices/>
       <Service/>
       <Screenshots />
-   
+   <Contact/>
 
 
-
+<Footer/>
 
 
       {/* <Videos/> */}
